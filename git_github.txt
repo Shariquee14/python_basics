@@ -1,0 +1,4 @@
+git add .   (yah jab hame ek folder ki saari file ko select krke dalna ho github pr)
+git add filename.py   ( yah tab jab hamme kisi particular file keliya krna ho for example git add data.py)
+git commit -m "Hey this is my 1st code" (in this you commit and write a message "" is these )
+git push 
