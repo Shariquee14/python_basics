@@ -2,3 +2,20 @@ git add .   (yah jab hame ek folder ki saari file ko select krke dalna ho github
 git add filename.py   ( yah tab jab hamme kisi particular file keliya krna ho for example git add data.py)
 git commit -m "Hey this is my 1st code" (in this you commit and write a message "" is these )
 git push 
+
+git config --global user.name "Your Name" 
+git config --global user.email "you@email.com" 
+# Create a free account on github.com with the SAME name and photo as LinkedIn.
+
+
+git init                             # 1. start tracking (once per project)
+git add .                            # 2. stage all changed files
+git commit -m "Day 1: Python intro"  # 3. save a version with a message
+git remote add origin <repo-URL>     #    link to GitHub (once per project)
+git branch -M main
+git push -u origin main              # 4. upload to GitHub
+# Next time only: git add .  ->  git commit -m "..."  ->  git push
+
+
+[MEMORY TRICK] add = put your files in the box. commit = seal the box and write a label on it. 
+push = send the box to GitHub. Three steps, every time.
