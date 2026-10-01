@@ -1,0 +1,190 @@
+1.  Variables and data types
+
+name = "Aniket"         # str   (text)
+age = 19                # int   (whole number)
+height = 5.6            # float (decimal)
+is_student = True       # bool  (True / False, capital letters!)
+print(type(name))       # <class 'str'>
+print(type(age))        # <class 'int'>
+print(type(height))     # <class 'float'>
+print(type(is_student)) # <class 'bool'>
+age = 20                # a variable can be changed any time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. f-strings and input --->
+
+
+name = "Priya"
+marks = 87
+print(f"{name} scored {marks} marks")      # Priya scored 87 marks
+print(f"Average: {marks / 2:.1f}")         # Average: 43.5  (.1f = 1 decimal)
+
+age = input("Enter your age: ")            # input ALWAYS gives a str
+print(type(age))                           # <class 'str'>   even if you typed 19
+age = int(age)                             # convert on purpose
+print(age + 1)                             # 20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.Lists: many values in one variable
+
+
+
+#         index:  0   1   2   3   4
+
+marks = [45, 67, 89, 34, 78]
+print(marks[0])          # 45
+print(marks[-1])         # 78   negative index counts from the end
+print(marks[1:3])        # [67, 89]  slice: from 1 up to (not including) 3
+print(len(marks))        # 5
+marks[1] = 90            # update
+marks.append(55)         # add to the end
+marks.remove(34)         # remove a value
+print(sum(marks), max(marks), min(marks))    # built-ins that just work
+print(sorted(marks))     # new sorted copy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. Dictionaries: values with name
+
+student = {
+    "name": "Aniket",
+    "roll": 9,
+    "class": "10",
+    "marks": {"eng": 30, "math": 40, "science": 20}     # dict inside a dict }
+
+
+print(student["name"])              # Aniket
+print(student["marks"]["math"])     # 40
+student["city"] = "Jamshedpur"      # add a key
+student["roll"] = 20                # update
+del student["class"]                # remove a key
+print(student.keys())               # dict_keys(['name', 'roll', 'marks', 'city'])
+print(student.values())
+print(student.get("age", 0))        # 0   .get() gives a default instead of an error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Loops and comprehensions
+
+
+marks = [45, 67, 89, 34, 78]
+
+for m in marks:                       # for each item
+    print(m)
+for i in range(5):                    # 0 1 2 3 4
+    print(i)
+for i, m in enumerate(marks):         # index and value together
+    print(i, m)
+for subject, mark in student["marks"].items():   # loop over a dict
+    print(f"{subject}: {mark}")
+count = 0
+while count < 3:                      # repeat until a condition fails
+    count = count + 1
+
+
+List comprehensions: a loop that builds a new list in one line
+doubled = [m * 2 for m in marks]              # [90, 134, 178, 68, 156]
+passed  = [m for m in marks if m >= 40]       # [45, 67, 89, 78]   only some
+grades  = ["P" if m >= 40 else "F" for m in marks]   # ['P','P','P','F','P']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. Functions
+
+
+def find_sum(a, b):            # def, name, parameters, colon
+    return a + b               # indented body
+total = find_sum(3, 4)         # 7 is stored in total
+print(total)
+def average(numbers):
+    return sum(numbers) / len(numbers)
+def result(student):
+    avg = average(student["marks"])
+    if avg >= 40:
+        return "Pass"
+    return "Fail"
+def greet(name, greeting="Hello"):    # default parameter
+    return f"{greeting}, {name}!"
+print(greet("Ami"))                   # Hello, Ami!
+print(greet("Ami", "Namaste"))        # Namaste, Ami
+
+
