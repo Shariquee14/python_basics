@@ -6,4 +6,4 @@ print(f"Student's name: {student['name']}")
 
 for subject, mark in student.items():
     if subject != 'name':
-        print(f"{subject.capitalize()}: {mark}")
+        print(f"{subject}: {mark}")
